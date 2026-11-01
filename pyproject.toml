@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "screenglow"
+version = "0.1.0"
+description = "Ambient LED lighting that follows the colours on your screen (WLED / Arduino Adalight)"
+readme = "README.md"
+license = "MIT"
+authors = [{ name = "Rohit Biradar" }]
+requires-python = ">=3.10"
+dependencies = ["mss>=9", "numpy>=1.24", "pillow>=10"]
+
+[project.optional-dependencies]
+arduino = ["pyserial>=3.5"]
+dev = ["pytest>=8"]
+
+[project.scripts]
+screenglow = "screenglow.cli:main"
+
+[tool.setuptools]
+packages = ["screenglow"]
